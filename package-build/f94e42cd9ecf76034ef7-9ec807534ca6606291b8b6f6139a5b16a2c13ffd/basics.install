@@ -1,0 +1,34 @@
+post_install() {
+    echo ">>> Enabling essential services..."
+    systemctl enable --now NetworkManager.service
+    systemctl enable --now bluetooth.service
+    systemctl enable --now cups.service
+    systemctl enable --now pipewire-pulse.service
+    systemctl enable --now sddm.service
+
+    echo ">>> Reminder: Set zsh as default shell manually with:"
+    echo "    chsh -s /bin/zsh <username>"
+
+    echo ">>> Installing Zenities setup..."
+    if [ ! -d "/opt/zenities" ]; then
+        git clone https://github.com/hayyaoe/zenities.git /opt/zenities
+    else
+        git -C /opt/zenities pull
+    fi
+
+    if [ -f "/opt/zenities/INSTALL.sh" ]; then
+        (cd /opt/zenities && sh INSTALL.sh)
+    else
+        echo "!!! INSTALL.sh not found in /opt/zenities"
+    fi
+
+    echo ">>> Installation complete! Reboot to use Hyprland or KDE Plasma."
+}
+
+post_upgrade() {
+    echo ">>> basics meta-package upgraded."
+}
+
+pre_remove() {
+    echo ">>> basics meta-package is being removed. Services are not disabled."
+}
