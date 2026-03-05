@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AOSSIE — Overview</title>
+  <link rel="stylesheet" href="overview.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── Top bar ─────────────────────────────────────── -->
+  <header class="topbar">
+    <span class="brand">AOSSIE</span>
+    <button class="theme-toggle">Dark mode</button>
+  </header>
+
+  <!-- ── Layout ──────────────────────────────────────── -->
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <p class="sidebar-section-label">Navigation</p>
+      <nav class="sidebar-nav">
+        <a href="overview.html" class="nav-item active">Overview</a>
+        <a href="cicd.html"     class="nav-item">Live CI / CD</a>
+        <a href="trends.html"   class="nav-item">Health Trends</a>
+      </nav>
+
+      <p class="sidebar-section-label">Repositories</p>
+      <div class="sidebar-repos">
+        <a href="repo-agora.html"     class="repo-item">Agora</a>
+        <a href="repo-carbon.html"    class="repo-item">Carbon</a>
+        <a href="repo-debatekg.html"  class="repo-item">DebateKG</a>
+        <a href="repo-etherauth.html" class="repo-item">EtherAuth</a>
+        <a href="repo-sunpy.html"     class="repo-item">SunPy</a>
+        <a href="repo-pictopy.html"   class="repo-item">PictoPy</a>
+        <span class="repo-more">+ 58 more</span>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+
+      <!-- Page heading -->
+      <div class="page-heading">
+        <h1 class="page-title">Org Overview</h1>
+        <p class="page-subtitle">AOSSIE-Org &nbsp;·&nbsp; Last updated: Mon 09:00 UTC</p>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="stat-cards">
+
+        <div class="stat-card">
+          <span class="stat-value stat-blue">64</span>
+          <span class="stat-label">Total Repositories</span>
+          <span class="stat-sub">4 archived excluded</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-value stat-green">61<span class="stat-unit">/100</span></span>
+          <span class="stat-label">Avg Health Score</span>
+          <span class="stat-sub stat-up">↑ +4 from last week</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-value stat-amber">47<span class="stat-unit">%</span></span>
+          <span class="stat-label">CI Coverage</span>
+          <span class="stat-sub stat-down">↓ 30 repos have no CI</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-value stat-purple">18</span>
+          <span class="stat-label">Active Repositories</span>
+          <span class="stat-sub">committed in last 30 days</span>
+        </div>
+
+      </div>
+
+      <!-- Table toolbar -->
+      <div class="table-toolbar">
+        <div class="toolbar-left">
+          <input
+            class="search-input"
+            type="text"
+            placeholder="Search repositories..."
+          />
+          <select class="filter-select">
+            <option>All Tiers</option>
+            <option>Active</option>
+            <option>Maintained</option>
+            <option>Stale</option>
+            <option>Dormant</option>
+          </select>
+          <select class="filter-select">
+            <option>Sort: Score ↓</option>
+            <option>Sort: Score ↑</option>
+            <option>Sort: Name A–Z</option>
+            <option>Sort: Last Commit</option>
+          </select>
+        </div>
+        <span class="table-count">64 repositories</span>
+      </div>
+
+      <!-- Repository table -->
+      <div class="table-wrapper">
+        <table class="repo-table">
+          <thead>
+            <tr>
+              <th class="col-name">Repository</th>
+              <th class="col-score">Score</th>
+              <th class="col-tier">Tier</th>
+              <th class="col-ci">CI Status</th>
+              <th class="col-ossf">OSSF</th>
+              <th class="col-commit">Last Commit</th>
+              <th class="col-issues">90d+ Issues</th>
+              <th class="col-prs">Open PRs</th>
+              <th class="col-trend">Trend</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td><a href="repo-agora.html" class="repo-link">Agora</a></td>
+              <td><span class="score score-green">84</span></td>
+              <td><span class="tier tier-active">Active</span></td>
+              <td><span class="ci ci-pass">passing</span></td>
+              <td class="ossf ossf-green">7.4</td>
+              <td class="muted mono">3d ago</td>
+              <td class="muted">2 / 14</td>
+              <td class="muted">3</td>
+              <td class="trend trend-up">↑</td>
+            </tr>
+
+            <tr>
+              <td><a href="repo-etherauth.html" class="repo-link">EtherAuth</a></td>
+              <td><span class="score score-green">76</span></td>
+              <td><span class="tier tier-active">Active</span></td>
+              <td><span class="ci ci-pass">passing</span></td>
+              <td class="ossf ossf-green">6.8</td>
+              <td class="muted mono">12d ago</td>
+              <td class="muted">5 / 21</td>
+              <td class="muted">2</td>
+              <td class="trend trend-up">↑</td>
+            </tr>
+
+            <tr>
+              <td><a href="repo-sunpy.html" class="repo-link">SunPy</a></td>
+              <td><span class="score score-green">71</span></td>
+              <td><span class="tier tier-maintained">Maintained</span></td>
+              <td><span class="ci ci-pass">passing</span></td>
+              <td class="ossf ossf-amber">5.9</td>
+              <td class="muted mono">28d ago</td>
+              <td class="muted">8 / 33</td>
+              <td class="muted">7</td>
+              <td class="trend trend-flat">→</td>
+            </tr>
+
+            <tr>
+              <td><a href="repo-pictopy.html" class="repo-link">PictoPy</a></td>
+              <td><span class="score score-amber">63</span></td>
+              <td><span class="tier tier-active">Active</span></td>
+              <td><span class="ci ci-fail">failing</span></td>
+              <td class="ossf ossf-amber">5.1</td>
+              <td class="muted mono">6d ago</td>
+              <td class="muted">4 / 18</td>
+              <td class="muted">5</td>
+              <td class="trend trend-up">↑</td>
+            </tr>
+
+            <tr>
+              <td><a href="repo-debatekg.html" class="repo-link">DebateKG</a></td>
+              <td><span class="score score-amber">58</span></td>
+              <td><span class="tier tier-maintained">Maintained</span></td>
+              <td><span class="ci ci-fail">failing</span></td>
+              <td class="ossf ossf-amber">5.2</td>
+              <td class="muted mono">45d ago</td>
+              <td class="muted">11 / 19</td>
+              <td class="muted">4</td>
+              <td class="trend trend-up">↑</td>
+            </tr>
+
+            <tr>
+              <td><a href="repo-kronos.html" class="repo-link">Kronos</a></td>
+              <td><span class="score score-amber">51</span></td>
+              <td><span class="tier tier-stale">Stale</span></td>
+              <td><span class="ci ci-none">none</span></td>
+              <td class="ossf ossf-red">3.8</td>
+              <td class="muted mono">112d ago</td>
+              <td class="muted">17 / 24</td>
+              <td class="muted">1</td>
+              <td class="trend trend-down">↓</td>
+            </tr>
+
+            <tr>
+              <td><a href="repo-owl.html" class="repo-link">Owl</a></td>
+              <td><span class="score score-red">38</span></td>
+              <td><span class="tier tier-stale">Stale</span></td>
+              <td><span class="ci ci-none">none</span></td>
+              <td class="ossf ossf-red">2.9</td>
+              <td class="muted mono">140d ago</td>
+              <td class="muted">22 / 29</td>
+              <td class="muted">0</td>
+              <td class="trend trend-flat">→</td>
+            </tr>
+
+            <tr>
+              <td><a href="repo-carbon.html" class="repo-link">Carbon</a></td>
+              <td><span class="score score-red">34</span></td>
+              <td><span class="tier tier-dormant">Dormant</span></td>
+              <td><span class="ci ci-none">none</span></td>
+              <td class="ossf ossf-red">3.1</td>
+              <td class="muted mono">210d ago</td>
+              <td class="muted">19 / 22</td>
+              <td class="muted">0</td>
+              <td class="trend trend-down">↓</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <div class="table-footer">
+          <span class="muted">Showing 8 of 64 repositories</span>
+          <div class="pagination">
+            <button class="page-btn" disabled>← Prev</button>
+            <span class="page-indicator">Page 1 of 8</span>
+            <button class="page-btn">Next →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tier breakdown -->
+      <div class="tier-breakdown">
+        <p class="breakdown-title">Repository Tiers</p>
+        <div class="tier-row">
+          <div class="tier-stat">
+            <span class="tier-dot dot-active"></span>
+            <span class="tier-name">Active</span>
+            <span class="tier-count">18</span>
+            <span class="tier-def">committed in last 30 days</span>
+          </div>
+          <div class="tier-stat">
+            <span class="tier-dot dot-maintained"></span>
+            <span class="tier-name">Maintained</span>
+            <span class="tier-count">14</span>
+            <span class="tier-def">committed in last 90 days</span>
+          </div>
+          <div class="tier-stat">
+            <span class="tier-dot dot-stale"></span>
+            <span class="tier-name">Stale</span>
+            <span class="tier-count">19</span>
+            <span class="tier-def">90–180 days since last commit</span>
+          </div>
+          <div class="tier-stat">
+            <span class="tier-dot dot-dormant"></span>
+            <span class="tier-name">Dormant</span>
+            <span class="tier-count">13</span>
+            <span class="tier-def">180+ days since last commit</span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>
