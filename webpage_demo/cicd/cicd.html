@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AOSSIE — Live CI / CD</title>
+  <link rel="stylesheet" href="cicd.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── Top bar ─────────────────────────────────────── -->
+  <header class="topbar">
+    <span class="brand">AOSSIE</span>
+    <button class="theme-toggle">Dark mode</button>
+  </header>
+
+  <!-- ── Layout ──────────────────────────────────────── -->
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <p class="sidebar-section-label">Navigation</p>
+      <nav class="sidebar-nav">
+        <a href="overview.html" class="nav-item">Overview</a>
+        <a href="cicd.html"     class="nav-item active">Live CI / CD</a>
+        <a href="trends.html"   class="nav-item">Health Trends</a>
+      </nav>
+
+      <p class="sidebar-section-label">Repositories</p>
+      <div class="sidebar-repos">
+        <a href="repo-agora.html"    class="repo-item">Agora</a>
+        <a href="repo-carbon.html"   class="repo-item">Carbon</a>
+        <a href="repo-debatekg.html" class="repo-item">DebateKG</a>
+        <a href="repo-etherauth.html"class="repo-item">EtherAuth</a>
+        <span class="repo-more">+ 60 more</span>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+
+      <!-- Page heading -->
+      <div class="page-heading">
+        <h1 class="page-title">Live CI / CD</h1>
+        <p class="page-subtitle">Status of all the workflows across the Organization</p>
+      </div>
+
+      <!-- Failed runs alert -->
+      <div class="alert-failed">
+        <div class="alert-body">
+          <span class="alert-label">Failed runs right now</span>
+          <span class="alert-detail">DebateKG &nbsp;·&nbsp; CI &nbsp;·&nbsp; push dev branch &nbsp;·&nbsp; 1m 02s ago</span>
+        </div>
+        <a href="#" class="alert-btn">View run on GitHub</a>
+      </div>
+
+      <!-- Filter bar -->
+      <div class="filter-bar">
+        <button class="filter-btn">All Repositories</button>
+        <button class="filter-btn">All Statuses</button>
+        <button class="filter-btn">All Workflows</button>
+      </div>
+
+      <!-- Workflow runs table -->
+      <div class="table-wrapper">
+        <table class="runs-table">
+          <thead>
+            <tr>
+              <th>Repository</th>
+              <th>Workflow</th>
+              <th>Trigger</th>
+              <th>Branch</th>
+              <th>Duration</th>
+              <th>Status</th>
+              <th>When</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="repo-agora.html" class="repo-link">Agora</a></td>
+              <td>CI</td>
+              <td>push</td>
+              <td class="mono">main</td>
+              <td class="mono">2m 14s</td>
+              <td><span class="badge badge-passed">passed</span></td>
+              <td class="when">3 min ago</td>
+            </tr>
+            <tr>
+              <td><a href="repo-debatekg.html" class="repo-link">DebateKG</a></td>
+              <td>CI</td>
+              <td>push</td>
+              <td class="mono">dev</td>
+              <td class="mono">1m 02s</td>
+              <td><span class="badge badge-failed">failed</span></td>
+              <td class="when">7 min ago</td>
+            </tr>
+            <tr>
+              <td><a href="repo-agora.html" class="repo-link">Agora</a></td>
+              <td>Release</td>
+              <td>tag</td>
+              <td class="mono">v2.1.0</td>
+              <td class="mono">4m 55s</td>
+              <td><span class="badge badge-passed">passed</span></td>
+              <td class="when">1 hr ago</td>
+            </tr>
+            <tr>
+              <td><a href="repo-etherauth.html" class="repo-link">EtherAuth</a></td>
+              <td>CI</td>
+              <td>pull_request</td>
+              <td class="mono">feature/x</td>
+              <td class="mono">3m 20s</td>
+              <td><span class="badge badge-running">running</span></td>
+              <td class="when running-text">in progress</td>
+            </tr>
+            <tr>
+              <td><a href="repo-carbon.html" class="repo-link">Carbon</a></td>
+              <td>Stale Check</td>
+              <td>schedule</td>
+              <td class="mono">main</td>
+              <td class="mono">0m 44s</td>
+              <td><span class="badge badge-passed">passed</span></td>
+              <td class="when">2 hrs ago</td>
+            </tr>
+            <tr>
+              <td><a href="repo-debatekg.html" class="repo-link">DebateKG</a></td>
+              <td>Label Sync</td>
+              <td>schedule</td>
+              <td class="mono">main</td>
+              <td class="mono">0m 18s</td>
+              <td><span class="badge badge-passed">passed</span></td>
+              <td class="when">3 hrs ago</td>
+            </tr>
+            <tr>
+              <td><a href="repo-agora.html" class="repo-link">Agora</a></td>
+              <td>Stale Check</td>
+              <td>schedule</td>
+              <td class="mono">main</td>
+              <td class="mono">0m 31s</td>
+              <td><span class="badge badge-passed">passed</span></td>
+              <td class="when">4 hrs ago</td>
+            </tr>
+            <tr>
+              <td><a href="repo-carbon.html" class="repo-link">Carbon</a></td>
+              <td>CI</td>
+              <td>push</td>
+              <td class="mono">main</td>
+              <td class="mono">—</td>
+              <td><span class="badge badge-skipped">skipped</span></td>
+              <td class="when">5 hrs ago</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-more">... more runs below ...</p>
+      </div>
+
+      <!-- 24-hour stats -->
+      <div class="stats-section">
+        <p class="stats-label">Last 24 hours across all repositories</p>
+        <div class="stats-row">
+          <div class="stat-card">
+            <span class="stat-value stat-green">142</span>
+            <span class="stat-desc">passed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value stat-red">7</span>
+            <span class="stat-desc">failed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value stat-blue">3</span>
+            <span class="stat-desc">running now</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value stat-amber">34%</span>
+            <span class="stat-desc">repos ran CI today</span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>
