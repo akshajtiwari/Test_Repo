@@ -12,3 +12,9 @@
 - `cicd.html`
 - `cicd.css`
 ---
+### 3. Repository Detail (Agora)
+![Agora](demo_images/agora.png)
+**Code:** [`repo/`](repo/)
+- `repo-agora.html`
+- `repo.css`
+---

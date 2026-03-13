@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AOSSIE — Agora</title>
+  <link rel="stylesheet" href="repo.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── Top bar ─────────────────────────────────────── -->
+  <header class="topbar">
+    <span class="brand">AOSSIE</span>
+    <button class="theme-toggle">Dark mode</button>
+  </header>
+
+  <!-- ── Layout ──────────────────────────────────────── -->
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <p class="sidebar-section-label">Navigation</p>
+      <nav class="sidebar-nav">
+        <a href="overview.html" class="nav-item">Overview</a>
+        <a href="cicd.html"     class="nav-item">Live CI / CD</a>
+        <a href="trends.html"   class="nav-item">Health Trends</a>
+      </nav>
+
+      <p class="sidebar-section-label">Repositories</p>
+      <div class="sidebar-repos">
+        <a href="repo-agora.html"     class="repo-item active">Agora</a>
+        <a href="repo-carbon.html"    class="repo-item">Carbon</a>
+        <a href="repo-debatekg.html"  class="repo-item">DebateKG</a>
+        <a href="repo-etherauth.html" class="repo-item">EtherAuth</a>
+        <a href="repo-sunpy.html"     class="repo-item">SunPy</a>
+        <a href="repo-pictopy.html"   class="repo-item">PictoPy</a>
+        <span class="repo-more">+ 58 more</span>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+
+      <!-- ── Repo header ─────────────────────────────── -->
+      <div class="repo-header">
+        <div class="repo-header-left">
+          <div class="repo-title-row">
+            <h1 class="repo-name">Agora</h1>
+            <span class="tier-badge tier-active">Active</span>
+            <a
+              href="https://github.com/AOSSIE-Org/Agora"
+              target="_blank"
+              class="gh-link"
+            >↗ GitHub</a>
+          </div>
+          <p class="repo-meta">
+            Last commit: <strong>3 days ago</strong>
+            &nbsp;·&nbsp; Language: <strong>Scala</strong>
+            &nbsp;·&nbsp; Open issues: <strong>14</strong>
+            &nbsp;·&nbsp; Open PRs: <strong>3</strong>
+          </p>
+        </div>
+        <div class="repo-header-right">
+          <div class="score-display">
+            <span class="score-number score-green">84</span>
+            <span class="score-label">/ 100</span>
+          </div>
+          <div class="ossf-display">
+            <span class="ossf-number ossf-green">7.4</span>
+            <span class="ossf-label">OSSF</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Row 1: Health + Drift ───────────────────── -->
+      <div class="two-col">
+
+        <!-- Health breakdown -->
+        <section class="card">
+          <h2 class="card-title">Health Breakdown</h2>
+          <p class="card-subtitle">Failing dimensions shown first</p>
+
+          <div class="health-list">
+
+            <div class="health-item">
+              <div class="health-meta">
+                <span class="health-name">Branch Protection</span>
+                <span class="health-score score-red-text">0 / 10</span>
+              </div>
+              <div class="health-bar-track">
+                <div class="health-bar-fill bar-red" style="width: 0%"></div>
+              </div>
+              <p class="health-fix">Fix: enable required reviews on main branch</p>
+            </div>
+
+            <div class="health-item">
+              <div class="health-meta">
+                <span class="health-name">Activity</span>
+                <span class="health-score score-amber-text">9 / 15</span>
+              </div>
+              <div class="health-bar-track">
+                <div class="health-bar-fill bar-amber" style="width: 60%"></div>
+              </div>
+              <p class="health-fix">Improve: increase commit and PR frequency</p>
+            </div>
+
+            <div class="health-item">
+              <div class="health-meta">
+                <span class="health-name">CI Coverage</span>
+                <span class="health-score score-green-text">30 / 30</span>
+              </div>
+              <div class="health-bar-track">
+                <div class="health-bar-fill bar-green" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <div class="health-item">
+              <div class="health-meta">
+                <span class="health-name">Release Consistency</span>
+                <span class="health-score score-green-text">25 / 25</span>
+              </div>
+              <div class="health-bar-track">
+                <div class="health-bar-fill bar-green" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <div class="health-item">
+              <div class="health-meta">
+                <span class="health-name">Docs Quality</span>
+                <span class="health-score score-green-text">20 / 20</span>
+              </div>
+              <div class="health-bar-track">
+                <div class="health-bar-fill bar-green" style="width: 100%"></div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Drift status -->
+        <section class="card">
+          <h2 class="card-title">Drift Status</h2>
+          <p class="card-subtitle">Compared against Template-Repository</p>
+
+          <table class="drift-table">
+            <thead>
+              <tr>
+                <th>File</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mono drift-file">ci.yml</td>
+                <td><span class="drift-badge drift-sync">IN_SYNC</span></td>
+              </tr>
+              <tr>
+                <td class="mono drift-file">ISSUE_TEMPLATE/bug.yml</td>
+                <td><span class="drift-badge drift-sync">IN_SYNC</span></td>
+              </tr>
+              <tr>
+                <td class="mono drift-file">ISSUE_TEMPLATE/feature.yml</td>
+                <td><span class="drift-badge drift-sync">IN_SYNC</span></td>
+              </tr>
+              <tr>
+                <td class="mono drift-file">release.yml</td>
+                <td><span class="drift-badge drift-outdated">OUTDATED</span></td>
+              </tr>
+              <tr>
+                <td class="mono drift-file">CODEOWNERS</td>
+                <td><span class="drift-badge drift-missing">MISSING</span></td>
+              </tr>
+              <tr>
+                <td class="mono drift-file">PULL_REQUEST_TEMPLATE.md</td>
+                <td><span class="drift-badge drift-sync">IN_SYNC</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="drift-footer">
+            <a href="https://github.com/AOSSIE-Org/Agora/pull/42"
+               target="_blank"
+               class="pr-link">
+              View open remediation PR #42 →
+            </a>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ── Row 2: Vitals + Workflows ──────────────── -->
+      <div class="two-col">
+
+        <!-- Repository vitals -->
+        <section class="card">
+          <h2 class="card-title">Repository Vitals</h2>
+          <p class="card-subtitle">Stats GitHub does not surface at a glance</p>
+
+          <div class="vitals-list">
+
+            <div class="vital-row">
+              <span class="vital-label">Issues older than 90 days</span>
+              <span class="vital-value vital-green">2 / 14</span>
+            </div>
+
+            <div class="vital-row">
+              <span class="vital-label">Avg PR cycle time (last 10 merged)</span>
+              <span class="vital-value vital-green">18 hrs</span>
+            </div>
+
+            <div class="vital-row">
+              <span class="vital-label">Unique contributors (last 90 days)</span>
+              <span class="vital-value vital-blue">4</span>
+            </div>
+
+            <div class="vital-row">
+              <span class="vital-label">First-time contributors this month</span>
+              <span class="vital-value vital-purple">1</span>
+            </div>
+
+            <div class="vital-row">
+              <span class="vital-label">PRs with no reviewer assigned</span>
+              <span class="vital-value vital-red">2</span>
+            </div>
+
+            <div class="vital-row">
+              <span class="vital-label">Open Renovate PRs (deps pending)</span>
+              <span class="vital-value vital-amber">3</span>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Recent workflow runs -->
+        <section class="card">
+          <h2 class="card-title">Recent Workflow Runs</h2>
+          <p class="card-subtitle">Last 5 runs in this repository</p>
+
+          <table class="wf-table">
+            <thead>
+              <tr>
+                <th>Workflow</th>
+                <th>Trigger</th>
+                <th>Branch</th>
+                <th>Duration</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="wf-name">CI</td>
+                <td class="muted">push</td>
+                <td class="mono muted">main</td>
+                <td class="mono muted">2m 14s</td>
+                <td><span class="run-badge run-passed">passed</span></td>
+              </tr>
+              <tr>
+                <td class="wf-name">Release</td>
+                <td class="muted">tag</td>
+                <td class="mono muted">v2.1.0</td>
+                <td class="mono muted">4m 55s</td>
+                <td><span class="run-badge run-passed">passed</span></td>
+              </tr>
+              <tr>
+                <td class="wf-name">CI</td>
+                <td class="muted">pull_request</td>
+                <td class="mono muted">feature/x</td>
+                <td class="mono muted">2m 08s</td>
+                <td><span class="run-badge run-passed">passed</span></td>
+              </tr>
+              <tr>
+                <td class="wf-name">Stale Check</td>
+                <td class="muted">schedule</td>
+                <td class="mono muted">main</td>
+                <td class="mono muted">0m 31s</td>
+                <td><span class="run-badge run-passed">passed</span></td>
+              </tr>
+              <tr>
+                <td class="wf-name">CI</td>
+                <td class="muted">push</td>
+                <td class="mono muted">dev</td>
+                <td class="mono muted">1m 44s</td>
+                <td><span class="run-badge run-failed">failed</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="wf-footer">
+            <a href="https://github.com/AOSSIE-Org/Agora/actions"
+               target="_blank"
+               class="view-all-link">
+              View all runs on GitHub →
+            </a>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ── Badges ──────────────────────────────────── -->
+      <section class="card card-full">
+        <h2 class="card-title">Badges</h2>
+        <p class="card-subtitle">Copy any badge markdown and paste into your README</p>
+
+        <div class="badges-grid">
+
+          <div class="badge-item">
+            <div class="badge-preview">
+              <span class="badge-pill badge-green">CI: passing</span>
+            </div>
+            <code class="badge-code">![CI](https://github.com/AOSSIE-Org/Agora/actions/workflows/ci.yml/badge.svg)</code>
+            <button class="copy-btn">Copy</button>
+          </div>
+
+          <div class="badge-item">
+            <div class="badge-preview">
+              <span class="badge-pill badge-blue">release: v2.1.0</span>
+            </div>
+            <code class="badge-code">![Release](https://img.shields.io/github/v/release/AOSSIE-Org/Agora)</code>
+            <button class="copy-btn">Copy</button>
+          </div>
+
+          <div class="badge-item">
+            <div class="badge-preview">
+              <span class="badge-pill badge-green">health: 84/100</span>
+            </div>
+            <code class="badge-code">![Health](https://img.shields.io/endpoint?url=https://aossie-org.github.io/org-dashboard/scores/agora.json)</code>
+            <button class="copy-btn">Copy</button>
+          </div>
+
+          <div class="badge-item">
+            <div class="badge-preview">
+              <span class="badge-pill badge-blue">license: MIT</span>
+            </div>
+            <code class="badge-code">![License](https://img.shields.io/github/license/AOSSIE-Org/Agora)</code>
+            <button class="copy-btn">Copy</button>
+          </div>
+
+          <div class="badge-item">
+            <div class="badge-preview">
+              <span class="badge-pill badge-green">OSSF: 7.4</span>
+            </div>
+            <code class="badge-code">![OSSF](https://api.securityscorecards.dev/projects/github.com/AOSSIE-Org/Agora/badge)</code>
+            <button class="copy-btn">Copy</button>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
