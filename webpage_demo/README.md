@@ -18,3 +18,9 @@
 - `repo-agora.html`
 - `repo.css`
 ---
+### 4. Health Trends
+![Health Trends](demo_images/trends.png)
+**Code:** [`trends/`](trends/)
+- `trends.html`
+- `trends.css`
+---

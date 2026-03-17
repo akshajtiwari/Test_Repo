@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AOSSIE — Health Trends</title>
+  <link rel="stylesheet" href="trends.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── Top bar ─────────────────────────────────────── -->
+  <header class="topbar">
+    <span class="brand">AOSSIE</span>
+    <button class="theme-toggle">Dark mode</button>
+  </header>
+
+  <!-- ── Layout ──────────────────────────────────────── -->
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <p class="sidebar-section-label">Navigation</p>
+      <nav class="sidebar-nav">
+        <a href="overview.html" class="nav-item">Overview</a>
+        <a href="cicd.html"     class="nav-item">Live CI / CD</a>
+        <a href="trends.html"   class="nav-item active">Health Trends</a>
+      </nav>
+
+      <p class="sidebar-section-label">Repositories</p>
+      <div class="sidebar-repos">
+        <a href="repo-agora.html"     class="repo-item">Agora</a>
+        <a href="repo-carbon.html"    class="repo-item">Carbon</a>
+        <a href="repo-debatekg.html"  class="repo-item">DebateKG</a>
+        <a href="repo-etherauth.html" class="repo-item">EtherAuth</a>
+        <a href="repo-sunpy.html"     class="repo-item">SunPy</a>
+        <a href="repo-pictopy.html"   class="repo-item">PictoPy</a>
+        <span class="repo-more">+ 58 more</span>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+
+      <!-- Page heading -->
+      <div class="page-heading">
+        <h1 class="page-title">Health Trends</h1>
+        <p class="page-subtitle">Org-wide health score history — updated every Monday at 09:00 UTC</p>
+      </div>
+
+      <!-- ── Org score chart ─────────────────────────── -->
+      <section class="card">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">Org Average Health Score</h2>
+            <p class="card-subtitle">12-week rolling average across all non-archived repositories</p>
+          </div>
+          <div class="chart-legend">
+            <span class="legend-item legend-all">All repos</span>
+            <span class="legend-item legend-active">Active only</span>
+          </div>
+        </div>
+
+        <!-- Pure CSS line chart using SVG inline -->
+        <div class="chart-container">
+          <svg
+            class="line-chart"
+            viewBox="0 0 900 220"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <!-- Grid lines -->
+            <line x1="0"   y1="10"  x2="900" y2="10"  class="grid-line"/>
+            <line x1="0"   y1="65"  x2="900" y2="65"  class="grid-line"/>
+            <line x1="0"   y1="120" x2="900" y2="120" class="grid-line"/>
+            <line x1="0"   y1="175" x2="900" y2="175" class="grid-line"/>
+
+            <!-- Y-axis labels -->
+            <text x="0" y="13"  class="chart-label">100</text>
+            <text x="0" y="68"  class="chart-label">75</text>
+            <text x="0" y="123" class="chart-label">50</text>
+            <text x="0" y="178" class="chart-label">25</text>
+
+            <!-- All repos line (avg 61) — plotted across 12 weeks -->
+            <!-- Data points: 48,50,49,52,54,55,57,58,59,60,61,61 mapped to SVG y (100=10, 0=210) -->
+            <polyline
+              class="chart-line chart-line-all"
+              points="
+                60,128
+                138,120
+                216,124
+                294,112
+                372,104
+                450,100
+                528,92
+                606,88
+                684,84
+                762,80
+                840,76
+                900,76
+              "
+            />
+            <!-- Dots -->
+            <circle cx="60"  cy="128" r="4" class="chart-dot dot-all"/>
+            <circle cx="138" cy="120" r="4" class="chart-dot dot-all"/>
+            <circle cx="216" cy="124" r="4" class="chart-dot dot-all"/>
+            <circle cx="294" cy="112" r="4" class="chart-dot dot-all"/>
+            <circle cx="372" cy="104" r="4" class="chart-dot dot-all"/>
+            <circle cx="450" cy="100" r="4" class="chart-dot dot-all"/>
+            <circle cx="528" cy="92"  r="4" class="chart-dot dot-all"/>
+            <circle cx="606" cy="88"  r="4" class="chart-dot dot-all"/>
+            <circle cx="684" cy="84"  r="4" class="chart-dot dot-all"/>
+            <circle cx="762" cy="80"  r="4" class="chart-dot dot-all"/>
+            <circle cx="840" cy="76"  r="4" class="chart-dot dot-all"/>
+            <circle cx="900" cy="76"  r="4" class="chart-dot dot-all"/>
+
+            <!-- Active repos only line (avg ~74) -->
+            <polyline
+              class="chart-line chart-line-active"
+              points="
+                60,90
+                138,84
+                216,86
+                294,78
+                372,72
+                450,68
+                528,62
+                606,58
+                684,54
+                762,50
+                840,46
+                900,46
+              "
+            />
+            <circle cx="60"  cy="90" r="4" class="chart-dot dot-active"/>
+            <circle cx="138" cy="84" r="4" class="chart-dot dot-active"/>
+            <circle cx="216" cy="86" r="4" class="chart-dot dot-active"/>
+            <circle cx="294" cy="78" r="4" class="chart-dot dot-active"/>
+            <circle cx="372" cy="72" r="4" class="chart-dot dot-active"/>
+            <circle cx="450" cy="68" r="4" class="chart-dot dot-active"/>
+            <circle cx="528" cy="62" r="4" class="chart-dot dot-active"/>
+            <circle cx="606" cy="58" r="4" class="chart-dot dot-active"/>
+            <circle cx="684" cy="54" r="4" class="chart-dot dot-active"/>
+            <circle cx="762" cy="50" r="4" class="chart-dot dot-active"/>
+            <circle cx="840" cy="46" r="4" class="chart-dot dot-active"/>
+            <circle cx="900" cy="46" r="4" class="chart-dot dot-active"/>
+          </svg>
+
+          <!-- X-axis week labels -->
+          <div class="x-axis">
+            <span>Wk 42</span><span>Wk 43</span><span>Wk 44</span>
+            <span>Wk 45</span><span>Wk 46</span><span>Wk 47</span>
+            <span>Wk 48</span><span>Wk 49</span><span>Wk 50</span>
+            <span>Wk 51</span><span>Wk 52</span><span>Now</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Two-col: movers + distribution ─────────── -->
+      <div class="two-col">
+
+        <!-- Biggest movers this week -->
+        <section class="card">
+          <h2 class="card-title">Biggest Movers This Week</h2>
+          <p class="card-subtitle">Repositories with the largest score changes</p>
+
+          <div class="movers-list">
+
+            <div class="mover-row mover-up">
+              <span class="mover-arrow">↑</span>
+              <div class="mover-info">
+                <a href="repo-agora.html" class="mover-name">Agora</a>
+                <span class="mover-reason">Added CI workflow</span>
+              </div>
+              <span class="mover-delta delta-up">+12 pts</span>
+            </div>
+
+            <div class="mover-row mover-up">
+              <span class="mover-arrow">↑</span>
+              <div class="mover-info">
+                <a href="repo-etherauth.html" class="mover-name">EtherAuth</a>
+                <span class="mover-reason">Merged release workflow PR</span>
+              </div>
+              <span class="mover-delta delta-up">+8 pts</span>
+            </div>
+
+            <div class="mover-row mover-up">
+              <span class="mover-arrow">↑</span>
+              <div class="mover-info">
+                <a href="repo-pictopy.html" class="mover-name">PictoPy</a>
+                <span class="mover-reason">Added CONTRIBUTING.md</span>
+              </div>
+              <span class="mover-delta delta-up">+5 pts</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="mover-row mover-down">
+              <span class="mover-arrow">↓</span>
+              <div class="mover-info">
+                <a href="repo-debatekg.html" class="mover-name">DebateKG</a>
+                <span class="mover-reason">Moved to Stale tier (90d+)</span>
+              </div>
+              <span class="mover-delta delta-down">−5 pts</span>
+            </div>
+
+            <div class="mover-row mover-down">
+              <span class="mover-arrow">↓</span>
+              <div class="mover-info">
+                <a href="repo-owl.html" class="mover-name">Owl</a>
+                <span class="mover-reason">CI workflow removed from branch</span>
+              </div>
+              <span class="mover-delta delta-down">−9 pts</span>
+            </div>
+
+            <div class="mover-row mover-down">
+              <span class="mover-arrow">↓</span>
+              <div class="mover-info">
+                <a href="repo-carbon.html" class="mover-name">Carbon</a>
+                <span class="mover-reason">Moved to Dormant tier (180d+)</span>
+              </div>
+              <span class="mover-delta delta-down">−12 pts</span>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Score distribution -->
+        <section class="card">
+          <h2 class="card-title">Score Distribution</h2>
+          <p class="card-subtitle">How many repositories sit in each band right now</p>
+
+          <div class="dist-list">
+
+            <div class="dist-row">
+              <div class="dist-label-col">
+                <span class="dist-range">76 – 100</span>
+                <span class="dist-tag dist-healthy">Healthy</span>
+              </div>
+              <div class="dist-bar-col">
+                <div class="dist-bar-track">
+                  <div class="dist-bar-fill dist-fill-green" style="width: 31%"></div>
+                </div>
+              </div>
+              <span class="dist-count">20 repos</span>
+            </div>
+
+            <div class="dist-row">
+              <div class="dist-label-col">
+                <span class="dist-range">51 – 75</span>
+                <span class="dist-tag dist-moderate">Moderate</span>
+              </div>
+              <div class="dist-bar-col">
+                <div class="dist-bar-track">
+                  <div class="dist-bar-fill dist-fill-amber" style="width: 34%"></div>
+                </div>
+              </div>
+              <span class="dist-count">22 repos</span>
+            </div>
+
+            <div class="dist-row">
+              <div class="dist-label-col">
+                <span class="dist-range">26 – 50</span>
+                <span class="dist-tag dist-poor">Poor</span>
+              </div>
+              <div class="dist-bar-col">
+                <div class="dist-bar-track">
+                  <div class="dist-bar-fill dist-fill-orange" style="width: 22%"></div>
+                </div>
+              </div>
+              <span class="dist-count">14 repos</span>
+            </div>
+
+            <div class="dist-row">
+              <div class="dist-label-col">
+                <span class="dist-range">0 – 25</span>
+                <span class="dist-tag dist-critical">Critical</span>
+              </div>
+              <div class="dist-bar-col">
+                <div class="dist-bar-track">
+                  <div class="dist-bar-fill dist-fill-red" style="width: 13%"></div>
+                </div>
+              </div>
+              <span class="dist-count">8 repos</span>
+            </div>
+
+          </div>
+
+          <!-- Mini summary -->
+          <div class="dist-summary">
+            <div class="dist-summary-item">
+              <span class="ds-val ds-green">20</span>
+              <span class="ds-label">above 75</span>
+            </div>
+            <div class="dist-summary-item">
+              <span class="ds-val ds-amber">22</span>
+              <span class="ds-label">in mid range</span>
+            </div>
+            <div class="dist-summary-item">
+              <span class="ds-val ds-red">22</span>
+              <span class="ds-label">need attention</span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ── CI coverage trend ───────────────────────── -->
+      <section class="card">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">CI Coverage Over Time</h2>
+            <p class="card-subtitle">Percentage of repositories with at least one active CI workflow</p>
+          </div>
+          <div class="current-pct">
+            <span class="pct-val">47%</span>
+            <span class="pct-label">current</span>
+          </div>
+        </div>
+
+        <!-- Simple bar chart using CSS -->
+        <div class="bar-chart">
+          <div class="bar-group">
+            <div class="bar-col">
+              <div class="bar-fill" style="height: 30%"></div>
+            </div>
+            <span class="bar-label">Wk 42</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-col">
+              <div class="bar-fill" style="height: 30%"></div>
+            </div>
+            <span class="bar-label">Wk 43</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-col">
+              <div class="bar-fill" style="height: 32%"></div>
+            </div>
+            <span class="bar-label">Wk 44</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-col">
+              <div class="bar-fill" style="height: 34%"></div>
+            </div>
+            <span class="bar-label">Wk 45</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-col">
+              <div class="bar-fill" style="height: 36%"></div>
+            </div>
+            <span class="bar-label">Wk 46</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-col">
+              <div class="bar-fill" style="height: 38%"></div>
+            </div>
+            <span class="bar-label">Wk 47</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-col">
+              <div class="bar-fill" style="height: 40%"></div>
+            </div>
+            <span class="bar-label">Wk 48</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-col">
+              <div class="bar-fill" style="height: 42%"></div>
+            </div>
+            <span class="bar-label">Wk 49</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-col">
+              <div class="bar-fill" style="height: 43%"></div>
+            </div>
+            <span class="bar-label">Wk 50</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-col">
+              <div class="bar-fill" style="height: 44%"></div>
+            </div>
+            <span class="bar-label">Wk 51</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-col">
+              <div class="bar-fill" style="height: 46%"></div>
+            </div>
+            <span class="bar-label">Wk 52</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-col">
+              <div class="bar-fill bar-current" style="height: 47%"></div>
+            </div>
+            <span class="bar-label bar-label-current">Now</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
