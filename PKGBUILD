@@ -8,7 +8,7 @@ url="https://github.com/AOSSIE-Org/PictoPy"
 license=('GPL-3.0-only')
 depends=('gtk3' 'python' 'hicolor-icon-theme')
 makedepends=('binutils')
-install=pictopy.install
+install=post.install
 source=("${pkgname}-${pkgver}.deb::https://github.com/AOSSIE-Org/PictoPy/releases/download/v${pkgver}/PictoPy_${pkgver}_amd64.deb")
 sha256sums=('SKIP')
 
